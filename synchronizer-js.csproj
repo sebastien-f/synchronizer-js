@@ -18,17 +18,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="demo.htm" />
-    <Content Include="Synchronizer.js" />
-    <Content Include="Synchronizer.min.js">
-      <DependentUpon>Synchronizer.js</DependentUpon>
+    <Content Include="Synchronizer-1.0.0.js" />
+    <Content Include="Synchronizer-1.0.0.min.js">
+      <DependentUpon>Synchronizer-1.0.0.js</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Synchronizer.ts" />
+    <TypeScriptCompile Include="Synchronizer-1.0.0.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Synchronizer.min.js.map">
-      <DependentUpon>Synchronizer.js</DependentUpon>
+    <Content Include="Synchronizer-1.0.0.min.js.map">
+      <DependentUpon>Synchronizer-1.0.0.js</DependentUpon>
     </Content>
   </ItemGroup>
   <PropertyGroup>
