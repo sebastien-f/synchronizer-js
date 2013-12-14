@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Synchronizer.js</title>
+    <script src="Synchronizer-1.0.0.min.js"></script>
+</head>
+<body>
+    <script>
+        (function () {
+            // from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            var synchronizer = new Synchronizer(function () {
+                console.log('all done');
+            });
+
+
+            // Simulate operations that takes random amount of time
+            for(var i = 0; i < 5; i++) {
+                var to = getRandomInt(2, 10);
+                console.log('Task #' + i + ' will take ' + to + ' seconds to be done.');
+                synchronizer.add();
+                setTimeout(function (idx) {
+                    // note that in IE the index (idx) will not be displayed. 
+                    // see https://developer.mozilla.org/en/docs/Web/API/window.setTimeout for an explanation
+                    // and a fix. As this is a browser issue and unrelated to the demo, I choosed not to 
+                    // include this fix, or add complexity with a new closure. 
+                    console.log('Task #' + idx + ' is finished.');
+                    synchronizer.done();
+                }, to * 1000, i); 
+            }
+            
+        })();
+
+    </script>
+    Open your console to see the result. 
+</body>
+</html>
